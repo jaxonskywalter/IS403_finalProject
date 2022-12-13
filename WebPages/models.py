@@ -13,12 +13,3 @@ class Supplier(models.Model):
 
     def __str__(self) :
         return (self.name)
-
-class Ingredient(models.Model) :
-    ingredient_name = models.CharField(max_length=50)
-    price = models.DecimalField(max_digits=8, decimal_places=2) 
-    expiration_date = models.DateField(default=datetime.today, blank=True)
-    suppliers = models.ManyToManyField(Supplier, blank=True)
-
-    def __str__ (self):
-        return (self.ingredient_name)

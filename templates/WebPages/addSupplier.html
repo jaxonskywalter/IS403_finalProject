@@ -18,7 +18,8 @@
         </div>
     </nav>
     <div>
-        <form class="addSupplier">
+        <form class="addSupplier" name="form" method="post" action="{% url 'addSuppliers' %}">
+            {%csrf_token%}
             <label for="name">Supplier Name: </label>
             <input type="text" name="name" id="name">
             <br><br><br>
@@ -28,6 +29,9 @@
             <br><br><br>
             <label for="phone">Phone Number: </label>
             <input type="number" name="phone" id="phone">
+            <br><br><br>
+            <label for="location">Location: </label>
+            <input type="text" name="location" id="location">
             <br><br><br>
             <br><br><br>
             <button type="submit">Add Supplier</button>
