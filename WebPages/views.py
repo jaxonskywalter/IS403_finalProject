@@ -26,7 +26,13 @@ def displaySuppliersPageView(request) :
         'supplier' : data
     }
     return render(request, 'WebPages/displaySupplier.html', context)
-
+def getSuppliersDetailPageView(request, id):
+    supplier = Supplier.objects.get(id=id)
+    context = {
+        'supplier' : supplier
+    }
+    print(context['supplier'])
+    return render(request, 'WebPages/detailSupplier.html', context)
 def displaySuppliersDetailPageView(request):
     return render(request, 'WebPages/detailSupplier.html')
 

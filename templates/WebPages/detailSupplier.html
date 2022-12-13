@@ -18,19 +18,26 @@
         </div>
     </nav>
     <div class="supplierDetailPage">
-        <form class="supplierDetail">
-            <label for="name">Supplier Name: </label>
-            <input type="text" name="name" id="name">
-            <br><br><br>
-            <input type="hidden" value="ingredientID">
-            <label for="email">Supplier Email:</label>
-            <input type="text" name="email" id="email">
-            <br><br><br>
-            <label for="phone">Phone Number: </label>
-            <input type="number" name="phone" id="phone">
-            <br><br><br>
-            <br><br><br>
-        </form>
+        <table style="width:30%; height: 40%; margin: 0 auto" class="bordered">
+            <thead>
+                <tr>
+                    <td>Supplier Name: </td>
+                    <td>{{supplier.name}}</td>
+                </tr>
+                <tr>
+                    <td>Supplier Email: </td>
+                    <td>{{supplier.email}}</td>
+                </tr>
+                <tr>
+                    <td>Phone Number: </td>
+                    <td>{{supplier.phone}}</td>
+                </tr>
+                <tr>
+                    <td>Location: </td>
+                    <td>{{supplier.location}}</td>
+                </tr>
+            </thead>
+        </table>
         <button onclick="transitionToPage(`{%url 'displaySuppliers'%}`)">Back to Suppliers</button>
     </div>
 </body>

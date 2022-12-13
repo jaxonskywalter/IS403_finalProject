@@ -28,9 +28,9 @@
             {%for supplier in supplier%}
             <tr>
                 <th class="name">{{supplier.name}}</th>
-                <th class="name"><a class='btn btn-primary' href="{%url 'displaySuppliersDetail'%}"><img src="{% static 'img/file.png'%}"></a></th>
-                <th class="name"><a class='btn btn-primary' href="{%url 'updateSingle' id=supplier.id %}"><img src="{% static 'img/editing.png'%}"></a></th>
-                <th class="name"><a class='btn btn-primary' href="{%url 'deleteSuppliers' id=supplier.id %}"><img src="{% static 'img/delete.png'%}"></a></th>
+                <th><img src="{% static 'img/file.png'%}" onclick="transitionToPage(`{%url 'getSuppliersDetail' id=supplier.id%}`)"/></th>
+                <th><img src="{% static 'img/editing.png'%}" onclick="transitionToPage(`{%url 'updateSingle' id=supplier.id%}`)"/></th>
+                <th><img src="{% static 'img/delete.png'%}" onclick="transitionToPage(`{%url 'deleteSuppliers' id=supplier.id%}`)"/></th>
             </tr>
             {%endfor%}
         </table>
