@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from WebPages.models import Supplier, Ingredient
 
 def indexPageView(request) :
     return render(request, 'WebPages/index.html')
@@ -10,6 +11,10 @@ def deleteSuppliersPageView(request) :
 def updateSuppliersPageView(request) :
     return render(request, 'WebPages/updateSupplier.html')
 def displaySuppliersPageView(request) :
-    return render(request, 'WebPages/displaySupplier.html')
+    data = Supplier.objects.all()
+    context = {
+        'supplier' : data
+    }
+    return render(request, 'WebPages/displaySupplier.html', context)
 def displaySuppliersDetailPageView(request):
     return render(request, 'WebPages/detailSupplier.html')

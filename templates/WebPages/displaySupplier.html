@@ -25,12 +25,14 @@
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
+            {%for supplier in supplier%}
             <tr>
-                <th class="name">Walmart</th>
+                <th class="name">{{supplier.name}}</th>
                 <th><img src="{% static 'img/file.png'%}" onclick="transitionToPage(`{%url 'displaySuppliersDetail'%}`)"/></th>
                 <th><img src="{% static 'img/editing.png'%}" onclick="transitionToPage(`{%url 'updateSuppliers'%}`)"/></th>
                 <th><img src="{% static 'img/delete.png'%}" onclick="transitionToPage(`{%url 'deleteSuppliers'%}`)"/></th>
             </tr>
+            {%endfor%}
         </table>
         <a><span onclick="transitionToPage(`{%url 'addSuppliers'%}`)">Add</span></a>
     </div>
