@@ -17,17 +17,19 @@
             <a><span onclick="transitionToPage(`{%url 'displaySuppliers'%}`)" class="homeButton">Suppliers</span></a>
         </div>
     </nav>
-    <div>
-        <form class="updateSupplier">
+    <div class="updateSupplier">
+        <form name="form" method="post" action="{% url 'updateSuppliers' %}">
+            {%csrf_token%}
+            <input type="hidden" id="id" name="id" value="{{supplier.id}}">
+
             <label for="name">Supplier Name: </label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" value="{{supplier.name}}" autofocus>
             <br><br><br>
-            <input type="hidden" value="ingredientID">
             <label for="email">Supplier Email:</label>
-            <input type="text" name="email" id="email">
+            <input type="text" name="email" id="email" value="{{supplier.email}}">
             <br><br><br>
             <label for="phone">Phone Number: </label>
-            <input type="number" name="phone" id="phone">
+            <input type="number" name="phone" id="phone" value="{{supplier.phone}}">
             <br><br><br>
             <br><br><br>
             <button type="submit">Update Supplier</button>

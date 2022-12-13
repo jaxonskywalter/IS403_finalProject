@@ -19,11 +19,43 @@ def deleteSuppliersPageView(request) :
     return render(request, 'WebPages/deleteSupplier.html')
 def updateSuppliersPageView(request) :
     return render(request, 'WebPages/updateSupplier.html')
+
 def displaySuppliersPageView(request) :
     data = Supplier.objects.all()
     context = {
         'supplier' : data
     }
     return render(request, 'WebPages/displaySupplier.html', context)
+
 def displaySuppliersDetailPageView(request):
     return render(request, 'WebPages/detailSupplier.html')
+
+def deleteSuppliersPageView(request, id) :
+    data = Supplier.objects.get(id = id)
+
+    data.delete()
+
+    return displaySuppliersPageView(request)    
+
+def updateSuppliersPageView(request) :
+    if request.method == 'POST':
+        id = request.POST['id']
+
+        supplier = Supplier.objects.get(id=id)
+
+        supplier.name = request.POST['name']
+        supplier.email = request.POST['email']
+        supplier.phone = request.POST['phone']
+
+
+        supplier.save()
+
+    return displaySuppliersPageView(request)
+
+def updateSinglePageView(request, id):
+    data = Supplier.objects.get(id = id)
+    
+    context = {
+        'supplier' : data,
+    }
+    return render(request, 'WebPages/updateSupplier.html', context)
