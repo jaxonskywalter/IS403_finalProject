@@ -1,18 +1,15 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def indexPageView(request) :
-    return HttpResponse('Crumbl Home Page')  
-def suppliersPageView(request) :
-    return HttpResponse('Suppliers Page') 
-def forcastedSalesPageView(request) :
-    return HttpResponse('Forecasted Sales Page') 
-def summaryPageView(request) :
-    return HttpResponse('Summary Page') 
+    return render(request, 'WebPages/index.html')
 def addSuppliersPageView(request) :
-    return HttpResponse('Add Suppliers Page') 
+    return render(request, 'WebPages/addSupplier.html')
 def deleteSuppliersPageView(request) :
-    return HttpResponse('Delete Suppliers Page') 
+    return render(request, 'WebPages/deleteSupplier.html')
 def updateSuppliersPageView(request) :
-    return HttpResponse('Update Suppliers Page') 
-def createSuppliersPageView(request) :
-    return HttpResponse('Create Suppliers Page') 
+    return render(request, 'WebPages/updateSupplier.html')
+def displaySuppliersPageView(request) :
+    return render(request, 'WebPages/displaySupplier.html')
+def displaySuppliersDetailPageView(request):
+    return render(request, 'WebPages/detailSupplier.html')

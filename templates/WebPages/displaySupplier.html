@@ -1,0 +1,38 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{%static 'css/styles.css' %}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="{% static 'js/myscripts.js' %}"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="links">
+            <a><span onclick="transitionToPage(`{%url 'index'%}`)">Home</span></a>
+            <a><span onclick="transitionToPage(`{%url 'displaySuppliers'%}`)" class="homeButton">Suppliers</span></a>
+        </div>
+    </nav>
+    <div class="suppliers">
+        <table>
+            <tr>
+                <th class="name">Suppliers</th>
+                <th>Detail</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr>
+                <th class="name">Walmart</th>
+                <th><img src="{% static 'img/file.png'%}" onclick="transitionToPage(`{%url 'displaySuppliersDetail'%}`)"/></th>
+                <th><img src="{% static 'img/editing.png'%}" onclick="transitionToPage(`{%url 'updateSuppliers'%}`)"/></th>
+                <th><img src="{% static 'img/delete.png'%}" onclick="transitionToPage(`{%url 'deleteSuppliers'%}`)"/></th>
+            </tr>
+        </table>
+        <a><span onclick="transitionToPage(`{%url 'addSuppliers'%}`)">Add</span></a>
+    </div>
+</body>
+</html>
