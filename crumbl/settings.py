@@ -1,3 +1,7 @@
+# IS 403 Final Project
+# Section 4 Group 14
+# Parker George, Faline Zhao, Joshua Judkins, Jaxon Walter
+
 """
 Django settings for crumbl project.
 
