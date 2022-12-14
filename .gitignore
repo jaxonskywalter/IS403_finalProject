@@ -140,6 +140,17 @@ ENV/
 env.bak/
 venv.bak/
 
+#for deployment
+.env/
+.venv/
+env/
+venv/
+*.env
+
+*.pyc
+db.sqlite3
+staticfiles/
+
 # Spyder project settings
 .spyderproject
 .spyproject
