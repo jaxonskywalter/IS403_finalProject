@@ -18,6 +18,14 @@
         </div>
     </nav>
     <div class="suppliers">
+        <form class="search">
+            <label for="search">Search for Recipes: </label>
+            <input type="text" name="search" id="search">
+            <button type="submit">Search</button>
+            <a><span onclick="transitionToPage(`{%url 'addSuppliers'%}`)">Add</span></a>
+        </form>
+        
+        <br><br><br>
         <table>
             <tr>
                 <th class="name">Suppliers</th>
@@ -34,7 +42,6 @@
             </tr>
             {%endfor%}
         </table>
-        <a><span onclick="transitionToPage(`{%url 'addSuppliers'%}`)">Add</span></a>
     </div>
 </body>
 </html>
