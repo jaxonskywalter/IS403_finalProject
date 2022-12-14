@@ -79,7 +79,7 @@ DATABASES = {
     'ENGINE': 'django.db.backends.postgresql',
     'NAME': 'crumbl',
     'USER': 'postgres',
-    'PASSWORD': 'admin',
+    'PASSWORD': 'Welcome123',
     'HOST': 'localhost',
     }
 }

@@ -18,13 +18,14 @@
         </div>
     </nav>
     <div class="suppliers">
-        <form class="search">
-            <label for="search">Search for Recipes: </label>
-            <input type="text" name="search" id="search">
+        <form class="search" name="form" method="POST" action="{% url 'displaySuppliers' %}">
+            {%csrf_token%}
+            <label for="find">Search for Suppliers: </label>
+            <input type="text" name="find" id="find">
             <button type="submit">Search</button>
             <a><span onclick="transitionToPage(`{%url 'addSuppliers'%}`)">Add</span></a>
         </form>
-        
+        <p>{{results}}</p>
         <br><br><br>
         <table>
             <tr>

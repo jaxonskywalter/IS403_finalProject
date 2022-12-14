@@ -23,9 +23,18 @@ def updateSuppliersPageView(request) :
 def displaySuppliersPageView(request) :
     data = Supplier.objects.all()
     context = {
-        'supplier' : data
+        'supplier' : data,
+        'results' : ''
     }
+    if request.method == 'POST':
+        find = request.POST.get('find')
+        data = Supplier.objects.filter(name=find)
+        if data.count() > 0:
+            context['supplier'] = data
+        else:
+            context['results'] = 'No suppliers exist with the name you entered.'
     return render(request, 'WebPages/displaySupplier.html', context)
+    
 def getSuppliersDetailPageView(request, id):
     supplier = Supplier.objects.get(id=id)
     context = {
